@@ -3,34 +3,31 @@ import ReactDOM from 'react-dom'
 import './index.css'
 
 const root = document.getElementById('root')
+
+const titleBook = 'Spooky Pookie (Little Pookie)'
+const author = 'Sandra Boynton '
+const img = 'https://images-na.ssl-images-amazon.com/images/I/51HU5AkfapL._AC_SX184_.jpg'
 const BookLIst = () => {
   return (
     <section className='booklist'>
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
+      <Book title='Comic cone' randomNUmber={22} job='developer' />
+      <Book title='Dungeons & Dragons' randomNUmber={18} job='actuarist' />
     </section>
   )
 }
-const Book = () => {
+const Book = ({ title, job, randomNUmber }) => {
   return (
     <article class='book'>
-      <Image />
-      <Title />
-      <Author />
+      <>
+        <img src={img} alt='' />
+        <h1>{titleBook}</h1>
+        <small>{author.toUpperCase()}</small>
+        <p>{title}</p>
+        <p>{randomNUmber}</p>
+        <p>{job}</p>
+      </>
     </article>
   )
 }
-const Image = () => {
-  return <img src='https://images-na.ssl-images-amazon.com/images/I/51HU5AkfapL._AC_SX184_.jpg' alt='' />
-}
-const Title = () => {
-  return <h1>Spooky Pookie (Little Pookie)</h1>
-}
-const Author = () => <small style={{ color: '#617d9b', fontWeight: 700, marginTop: '0.5rem' }}>Sandra Boynton </small>
 
 ReactDOM.render(<BookLIst />, root)
