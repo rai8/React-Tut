@@ -35,6 +35,10 @@ body {
   border-radius: 1rem;
   padding: 1rem 2rem;
 }
+.book img {
+  width: 300px;
+  height: 400px;
+}
 .book h1 {
   margin-top: 0.5rem;
 }
