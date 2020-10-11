@@ -4,27 +4,40 @@ import './index.css'
 
 const root = document.getElementById('root')
 
-const titleBook = 'Spooky Pookie (Little Pookie)'
-const author = 'Sandra Boynton '
-const img = 'https://images-na.ssl-images-amazon.com/images/I/51HU5AkfapL._AC_SX184_.jpg'
+const firstBook = {
+  img: 'https://images-na.ssl-images-amazon.com/images/I/51HU5AkfapL._AC_SX184_.jpg',
+  author: 'Sandra Boynton ',
+  titleBook: 'Spooky Pookie (Little Pookie)',
+}
+const secondBook = {
+  img: 'https://images-na.ssl-images-amazon.com/images/I/41dd3tjpdUL._AC_SX184_.jpg',
+  author: 'Stephenie Meyer Stephenie Meyer  ',
+  titleBook: 'Midnight Sun ',
+}
+
 const BookLIst = () => {
   return (
     <section className='booklist'>
-      <Book title='Comic cone' randomNUmber={22} job='developer' />
-      <Book title='Dungeons & Dragons' randomNUmber={18} job='actuarist' />
+      <Book img={firstBook.img} titleBook={firstBook.titleBook} author={firstBook.author}>
+        <p>
+          It’s Halloween! What will little Pookie decide to be this year? Pookie tries on costumes one by one, but
+          somehow can’t find just the right thing. The resolution to Pookie’s dilemma will delight toddlers and their
+          caregivers alike
+        </p>
+      </Book>
+
+      <Book img={secondBook.img} titleBook={secondBook.titleBook} author={secondBook.author} />
     </section>
   )
 }
-const Book = ({ title, job, randomNUmber }) => {
+const Book = ({ img, titleBook, author, children }) => {
   return (
     <article class='book'>
       <>
         <img src={img} alt='' />
         <h1>{titleBook}</h1>
         <small>{author.toUpperCase()}</small>
-        <p>{title}</p>
-        <p>{randomNUmber}</p>
-        <p>{job}</p>
+        {children}
       </>
     </article>
   )
